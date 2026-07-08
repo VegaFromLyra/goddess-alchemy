@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Session | Goddess Alchemy</title>
+  <meta name="description" content="Book your tarot reading, Reiki healing or spiritual coaching session with Goddess Alchemy. Free 20-minute clarity reading available to new clients." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Goddess <span>Alchemy</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="btn btn-gold nav-cta">Book a Session</a>
+    <button class="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="btn btn-gold" style="margin-top:16px;">Book a Session</a>
+</div>
+
+<div class="page-hero">
+  <div class="hero-orb hero-orb-1" style="opacity:.15;"></div>
+  <div class="container">
+    <p class="label">✦ Begin Your Journey ✦</p>
+    <div class="divider"></div>
+    <h1>Book a Session</h1>
+    <p>Choose how you'd like to connect. Every enquiry is answered personally within 24 hours.</p>
+  </div>
+</div>
+
+<section class="section" style="padding-top:20px;">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- LEFT: Info -->
+      <div class="contact-info fade-in">
+        <h2>Let's connect</h2>
+        <p>Whether you're booking a reading, a healing session, or simply curious — reach out. There's no pressure and no obligation.</p>
+
+        <div class="contact-item">
+          <div class="contact-item-icon">📸</div>
+          <div class="contact-item-text">
+            <strong>Instagram</strong>
+            <a href="https://instagram.com/starbirth" target="_blank" rel="noopener">@Starbirth</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-item-icon">💬</div>
+          <div class="contact-item-text">
+            <strong>WhatsApp Community</strong>
+            <a href="https://chat.whatsapp.com/HvLWpj6GPvn0JijaKI2Xic" target="_blank" rel="noopener">Join Inspired Life Collective</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-item-icon">🌍</div>
+          <div class="contact-item-text">
+            <strong>Location</strong>
+            <span>London, UK — Available globally via Zoom</span>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-item-icon">🕐</div>
+          <div class="contact-item-text">
+            <strong>Response Time</strong>
+            <span>Within 24 hours, Mon–Fri</span>
+          </div>
+        </div>
+
+        <!-- WhatsApp CTA button -->
+        <a href="https://chat.whatsapp.com/HvLWpj6GPvn0JijaKI2Xic" target="_blank" rel="noopener" class="wa-button">
+          💬 Join Our WhatsApp Community
+        </a>
+
+        <!-- Free reading offer -->
+        <div class="card" style="margin-top:32px; padding:28px; border-color:rgba(201,168,76,.3);">
+          <p class="label" style="margin-bottom:8px;">New clients</p>
+          <h3 style="margin-bottom:10px; font-size:1.4rem;">Free 20-Min Clarity Reading</h3>
+          <p style="color:var(--muted); font-size:.9rem; margin-bottom:16px;">
+            If you're new to Goddess Alchemy, request a free 20-minute taster reading in the form. No credit card. No obligation. Just honest guidance.
+          </p>
+          <p style="font-size:.82rem; color:var(--gold);">✦ Limited slots available each week</p>
+        </div>
+      </div>
+
+      <!-- RIGHT: Form -->
+      <div class="fade-in fade-in-delay-1">
+        <div class="card" style="padding:40px 36px;">
+          <h3 style="margin-bottom:8px; font-size:1.8rem;">Send a message</h3>
+          <p style="color:var(--muted); font-size:.9rem; margin-bottom:32px;">Fill in the form and Sangeeta will reply personally within 24 hours.</p>
+
+          <form id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Your first name" required />
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Your last name" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="whatsapp">WhatsApp Number (optional)</label>
+              <input type="tel" id="whatsapp" name="whatsapp" placeholder="+44 7700 000000" />
+            </div>
+
+            <div class="form-group">
+              <label for="service">Service You're Interested In</label>
+              <select id="service" name="service" required>
+                <option value="" disabled selected>Select a service…</option>
+                <option value="free">Free 20-Min Clarity Reading (New Clients)</option>
+                <option value="tarot-quick">Quick Tarot Reading — £30</option>
+                <option value="tarot-standard">Standard Tarot Reading — £65</option>
+                <option value="tarot-deep">Deep Insight Reading — £95</option>
+                <option value="reiki">Reiki Healing Session — £60</option>
+                <option value="chakra">Chakra Balancing — £60</option>
+                <option value="combo">Tarot + Chakra Combo — £110</option>
+                <option value="coaching">Spiritual Life Coaching — £75</option>
+                <option value="programme">8-Week Transformation Programme — £485</option>
+                <option value="group">Monthly Group Meditation — £15</option>
+                <option value="retreat">Retreat (Register Interest)</option>
+                <option value="other">Other / Not Sure Yet</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Your Message</label>
+              <textarea id="message" name="message" placeholder="Tell me a little about what you're seeking guidance on, or ask me any questions you have…" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="howFound">How did you find Goddess Alchemy?</label>
+              <select id="howFound" name="howFound">
+                <option value="" disabled selected>Select one…</option>
+                <option>Instagram @Starbirth</option>
+                <option>WhatsApp group</option>
+                <option>Facebook group</option>
+                <option>Friend or family referral</option>
+                <option>Google search</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-gold" style="width:100%; justify-content:center; padding:16px; font-size:1rem; margin-top:8px;">
+              Send Message ✦
+            </button>
+          </form>
+
+          <!-- Calendly note -->
+          <div class="calendly-note">
+            <p>Prefer to book directly? Once you've sent a message, Sangeeta will send you a personal booking link to choose your date and time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" style="background:var(--bg2); border-top:1px solid rgba(201,168,76,.08);">
+  <div class="container">
+    <div class="section-header fade-in">
+      <p class="label">✦ Questions ✦</p>
+      <div class="divider"></div>
+      <h2>Frequently Asked</h2>
+    </div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; max-width:900px; margin:0 auto;">
+      <div class="card fade-in" style="padding:28px;">
+        <h4 style="color:var(--gold-lt);font-family:var(--font-head);font-size:1.2rem;margin-bottom:10px;">How are sessions delivered?</h4>
+        <p style="color:var(--muted);font-size:.9rem;">All sessions are delivered via Zoom. I work with clients globally — USA, UK, India, Singapore, Canada and beyond.</p>
+      </div>
+      <div class="card fade-in fade-in-delay-1" style="padding:28px;">
+        <h4 style="color:var(--gold-lt);font-family:var(--font-head);font-size:1.2rem;margin-bottom:10px;">How do I pay?</h4>
+        <p style="color:var(--muted);font-size:.9rem;">Payment details are sent once your session is confirmed. I accept bank transfer, PayPal and major cards. Payment plans available for packages.</p>
+      </div>
+      <div class="card fade-in" style="padding:28px;">
+        <h4 style="color:var(--gold-lt);font-family:var(--font-head);font-size:1.2rem;margin-bottom:10px;">Is it confidential?</h4>
+        <p style="color:var(--muted);font-size:.9rem;">Completely. Everything you share is held in total confidence. I work with a strict code of ethics and professional integrity at all times.</p>
+      </div>
+      <div class="card fade-in fade-in-delay-1" style="padding:28px;">
+        <h4 style="color:var(--gold-lt);font-family:var(--font-head);font-size:1.2rem;margin-bottom:10px;">Can I get a reading as a gift?</h4>
+        <p style="color:var(--muted);font-size:.9rem;">Yes. Gift readings are available for any service. Get in touch and I'll arrange a personalised gift message and booking process for the recipient.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>Goddess <span>Alchemy</span></h3>
+        <p>Spiritual counselling, tarot readings, Reiki healing and transformation coaching. Serving clients globally with integrity, authenticity and care.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/starbirth" target="_blank" rel="noopener" class="social-btn">📸</a>
+          <a href="https://chat.whatsapp.com/HvLWpj6GPvn0JijaKI2Xic" target="_blank" rel="noopener" class="social-btn">💬</a>
+          <a href="https://facebook.com" target="_blank" rel="noopener" class="social-btn">📘</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Services</h4><ul>
+        <li><a href="services.html">Tarot Readings</a></li>
+        <li><a href="services.html">Reiki Healing</a></li>
+        <li><a href="services.html">Chakra Balancing</a></li>
+        <li><a href="services.html">Spiritual Coaching</a></li>
+        <li><a href="services.html">8-Week Programme</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Navigate</h4><ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services & Pricing</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Book a Session</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Connect</h4><ul>
+        <li><a href="https://instagram.com/starbirth" target="_blank" rel="noopener">@Starbirth</a></li>
+        <li><a href="contact.html">Book via Website</a></li>
+        <li><a href="https://chat.whatsapp.com/HvLWpj6GPvn0JijaKI2Xic" target="_blank" rel="noopener">WhatsApp Community</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Goddess Alchemy. All rights reserved.</p>
+      <span>goddessalchemy.co.uk | @Starbirth</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

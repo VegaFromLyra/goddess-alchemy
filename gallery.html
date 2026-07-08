@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery & Testimonials | Goddess Alchemy</title>
+  <meta name="description" content="Client testimonials and social proof from Goddess Alchemy. Real transformations from real clients across the UK, USA, Singapore and India." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .testimonials-full-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 24px;
+      margin-bottom: 80px;
+    }
+    .testi-featured {
+      grid-column: span 3;
+      padding: 48px;
+      text-align: center;
+    }
+    .testi-featured .testi-text {
+      font-size: 1.25rem;
+      max-width: 760px;
+      margin: 0 auto 24px;
+      line-height: 1.9;
+    }
+    .testi-featured .testi-author { justify-content: center; }
+    @media(max-width:900px){
+      .testimonials-full-grid { grid-template-columns: 1fr 1fr; }
+      .testi-featured { grid-column: span 2; }
+    }
+    @media(max-width:600px){
+      .testimonials-full-grid { grid-template-columns: 1fr; }
+      .testi-featured { grid-column: span 1; padding: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Goddess <span>Alchemy</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="btn btn-gold nav-cta">Book a Session</a>
+    <button class="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="btn btn-gold" style="margin-top:16px;">Book a Session</a>
+</div>
+
+<div class="page-hero">
+  <div class="hero-orb hero-orb-1" style="opacity:.15;"></div>
+  <div class="container">
+    <p class="label">✦ Proof in the Words ✦</p>
+    <div class="divider"></div>
+    <h1>Gallery & Testimonials</h1>
+    <p>Real words from real people whose lives have shifted through this work.</p>
+  </div>
+</div>
+
+<!-- FEATURED TESTIMONIALS -->
+<section class="section" style="padding-top:20px;">
+  <div class="container">
+
+    <div class="section-header fade-in">
+      <p class="label">✦ Client Stories ✦</p>
+      <div class="divider"></div>
+      <h2>What People Are Saying</h2>
+      <p>Clients from the UK, USA, Singapore, India and beyond</p>
+    </div>
+
+    <div class="testimonials-full-grid">
+
+      <!-- Featured wide testimonial -->
+      <div class="card testi-card testi-featured fade-in">
+        <div class="testi-stars" style="font-size:1.1rem;margin-bottom:16px;">★★★★★</div>
+        <p class="testi-text">
+          "I never stop counting on the accuracy she gives me in readings. It's not just about time and dates — she can accurately describe the inner landscape, mindscape and emotionscape of anyone of importance. Don't look around, don't waste time. Just book that session and hold your breath. The world is about to open its secrets for you through everything she says."
+        </p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="width:48px;height:48px;font-size:1.2rem;">P.R.</div>
+          <div class="testi-meta">
+            <strong>P.R.</strong>
+            <span>Experienced Tarot Reader & Client — USA</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Regular testimonials -->
+      <div class="card testi-card fade-in">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"She gave me such clarity. Exactly what I needed to hear. I came in completely lost about my career and left with a real direction."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">S.K.</div>
+          <div class="testi-meta"><strong>S.K.</strong><span>London, UK</span></div>
+        </div>
+      </div>
+
+      <div class="card testi-card fade-in fade-in-delay-1">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"The reading was spot on. Changed my perspective completely. I had been going round in circles — one session gave me the breakthrough I needed."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">A.P.</div>
+          <div class="testi-meta"><strong>A.P.</strong><span>Singapore</span></div>
+        </div>
+      </div>
+
+      <div class="card testi-card fade-in fade-in-delay-2">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"The Reiki session left me feeling lighter than I have in years. I didn't fully believe in energy healing before — I absolutely do now."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">M.T.</div>
+          <div class="testi-meta"><strong>M.T.</strong><span>Mumbai, India</span></div>
+        </div>
+      </div>
+
+      <div class="card testi-card fade-in">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"I've had readings from many different people over the years. Sangeeta is in a different league. The depth of insight is extraordinary."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">R.N.</div>
+          <div class="testi-meta"><strong>R.N.</strong><span>New York, USA</span></div>
+        </div>
+      </div>
+
+      <div class="card testi-card fade-in fade-in-delay-1">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"She described a situation I hadn't even mentioned and was completely accurate. It was both surprising and deeply reassuring."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">L.W.</div>
+          <div class="testi-meta"><strong>L.W.</strong><span>London, UK</span></div>
+        </div>
+      </div>
+
+      <div class="card testi-card fade-in fade-in-delay-2">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"The chakra balancing session was transformative. I left with a sense of calm I hadn't felt in months. Booked again the same week."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">P.S.</div>
+          <div class="testi-meta"><strong>P.S.</strong><span>Toronto, Canada</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- VISUAL GALLERY -->
+    <div class="section-header fade-in">
+      <p class="label">✦ The Practice ✦</p>
+      <div class="divider"></div>
+      <h2>From the Sessions</h2>
+      <p>A glimpse into the world of Goddess Alchemy</p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item g1 fade-in">
+        <div class="gallery-thumb">🔮</div>
+        <div class="gallery-overlay"><h4>Tarot Readings</h4><span>Deep intuitive guidance</span></div>
+      </div>
+      <div class="gallery-item g2 fade-in fade-in-delay-1">
+        <div class="gallery-thumb">✨</div>
+        <div class="gallery-overlay"><h4>Energy Healing</h4><span>Reiki & chakra work</span></div>
+      </div>
+      <div class="gallery-item g3 fade-in fade-in-delay-2">
+        <div class="gallery-thumb">🌙</div>
+        <div class="gallery-overlay"><h4>Moon Rituals</h4><span>Lunar cycle guidance</span></div>
+      </div>
+      <div class="gallery-item g4 fade-in">
+        <div class="gallery-thumb">💎</div>
+        <div class="gallery-overlay"><h4>Crystal Healing</h4><span>Stone & energy work</span></div>
+      </div>
+      <div class="gallery-item g5 fade-in fade-in-delay-1">
+        <div class="gallery-thumb">🌸</div>
+        <div class="gallery-overlay"><h4>Chakra Balancing</h4><span>Seven centres aligned</span></div>
+      </div>
+      <div class="gallery-item g6 fade-in fade-in-delay-2">
+        <div class="gallery-thumb">🕯️</div>
+        <div class="gallery-overlay"><h4>Spell Work</h4><span>Ritual & intention</span></div>
+      </div>
+      <div class="gallery-item g7 fade-in">
+        <div class="gallery-thumb">🧘‍♀️</div>
+        <div class="gallery-overlay"><h4>Group Meditation</h4><span>Monthly Zoom sessions</span></div>
+      </div>
+      <div class="gallery-item g8 fade-in fade-in-delay-1">
+        <div class="gallery-thumb">🌿</div>
+        <div class="gallery-overlay"><h4>Spiritual Coaching</h4><span>Life transformation</span></div>
+      </div>
+      <div class="gallery-item g9 fade-in fade-in-delay-2">
+        <div class="gallery-thumb">⭐</div>
+        <div class="gallery-overlay"><h4>Ho'oponopono</h4><span>Hawaiian healing practice</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-sm fade-in" style="background:var(--bg2);border-top:1px solid rgba(201,168,76,.08);">
+  <div class="container" style="text-align:center;">
+    <h2 style="margin-bottom:16px;">Ready to begin your story?</h2>
+    <p style="color:var(--muted);max-width:480px;margin:0 auto 32px;">Start with a free 20-minute clarity reading. No obligation, just honest guidance.</p>
+    <a href="contact.html" class="btn btn-gold">Book Your Free Reading</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>Goddess <span>Alchemy</span></h3>
+        <p>Spiritual counselling, tarot readings, Reiki healing and transformation coaching. Serving clients globally with integrity, authenticity and care.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/starbirth" target="_blank" rel="noopener" class="social-btn">📸</a>
+          <a href="https://chat.whatsapp.com/HvLWpj6GPvn0JijaKI2Xic" target="_blank" rel="noopener" class="social-btn">💬</a>
+          <a href="https://facebook.com" target="_blank" rel="noopener" class="social-btn">📘</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Services</h4><ul>
+        <li><a href="services.html">Tarot Readings</a></li>
+        <li><a href="services.html">Reiki Healing</a></li>
+        <li><a href="services.html">Chakra Balancing</a></li>
+        <li><a href="services.html">Spiritual Coaching</a></li>
+        <li><a href="services.html">8-Week Programme</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Navigate</h4><ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services & Pricing</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Book a Session</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Connect</h4><ul>
+        <li><a href="https://instagram.com/starbirth" target="_blank" rel="noopener">@Starbirth</a></li>
+        <li><a href="contact.html">Book via Website</a></li>
+        <li><a href="https://chat.whatsapp.com/HvLWpj6GPvn0JijaKI2Xic" target="_blank" rel="noopener">WhatsApp Community</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Goddess Alchemy. All rights reserved.</p>
+      <span>goddessalchemy.co.uk | @Starbirth</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
