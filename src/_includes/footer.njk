@@ -1,0 +1,46 @@
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>Goddess <span>Alchemy</span></h3>
+        <p>{{ contentful.settings.footerDescription | default("Spiritual counselling, tarot readings, Reiki healing and transformation coaching. Serving clients globally with integrity, authenticity and care.") }}</p>
+        <div class="footer-social">
+          <a href="{{ contentful.settings.instagramUrl | default('https://instagram.com/starbirth') }}" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">📸</a>
+          <a href="{{ contentful.settings.whatsappUrl | default('https://chat.whatsapp.com/HvLWpj6GPvn0JijaKI2Xic') }}" target="_blank" rel="noopener" class="social-btn" aria-label="WhatsApp Community">💬</a>
+          <a href="https://facebook.com" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">📘</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          {% for service in contentful.services %}
+          <li><a href="/services/">{{ service.name }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/services/">Services & Pricing</a></li>
+          <li><a href="/gallery/">Gallery</a></li>
+          <li><a href="/contact/">Book a Session</a></li>
+          <li><a href="{{ contentful.settings.whatsappUrl | default('https://chat.whatsapp.com/HvLWpj6GPvn0JijaKI2Xic') }}" target="_blank" rel="noopener">Join Community</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="{{ contentful.settings.instagramUrl | default('https://instagram.com/starbirth') }}" target="_blank" rel="noopener">{{ contentful.settings.instagramHandle | default("@Starbirth") }} on Instagram</a></li>
+          <li><a href="/contact/">Book via Website</a></li>
+          <li><a href="{{ contentful.settings.whatsappUrl | default('https://chat.whatsapp.com/HvLWpj6GPvn0JijaKI2Xic') }}" target="_blank" rel="noopener">WhatsApp Community</a></li>
+          <li><a href="/contact/">Send a Message</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>{{ contentful.settings.copyrightText | default("© 2026 Goddess Alchemy. All rights reserved.") }}</p>
+      <span>goddessalchemy.co.uk | {{ contentful.settings.instagramHandle | default("@Starbirth") }}</span>
+    </div>
+  </div>
+</footer>

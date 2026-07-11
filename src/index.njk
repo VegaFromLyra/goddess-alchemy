@@ -1,0 +1,148 @@
+---
+layout: base.njk
+title: "Goddess Alchemy | Spiritual Counselling, Tarot & Healing | London"
+description: "Goddess Alchemy offers transformative tarot readings, Reiki healing, chakra balancing and spiritual life coaching with 20+ years of experience. Book your session today."
+keywords: "tarot reading, spiritual counselling, reiki healing, chakra balancing, spiritual coach, London, online readings"
+permalink: /
+showModal: true
+extraScripts: "<script>const navCta=document.getElementById('navCta');if(navCta){window.addEventListener('scroll',()=>{navCta.style.display=window.scrollY>300?'inline-flex':'none';});}</script>"
+---
+
+<!-- ═══ HERO ═══════════════════════════════════════════════ -->
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="container">
+    <div class="hero-content">
+      <p class="hero-sub">{{ contentful.settings.heroLabel | default("✦ Spiritual Counselling & Transformation ✦") }}</p>
+      <h1 id="hero-heading">
+        {{ contentful.settings.heroHeading | default("Unlock Your") }}<br><em>{{ contentful.settings.heroHeadingAccent | default("Inner Alchemy") }}</em>
+      </h1>
+      <p class="hero-desc">
+        {{ contentful.settings.heroSubtitle | default("Tarot readings, Reiki healing, chakra balancing and spiritual life coaching — guided by 20+ years of experience and a deep commitment to your transformation.") }}
+      </p>
+      <div class="hero-btns">
+        <a href="/contact/" class="btn btn-gold">Book a Free Reading</a>
+        <a href="/services/" class="btn btn-outline">Explore Services</a>
+      </div>
+    </div>
+  </div>
+  <!-- Moon decoration -->
+  <div class="moon-ring" aria-hidden="true">
+    <div class="moon-inner">🌙</div>
+  </div>
+</section>
+
+<!-- ═══ 3-COL FEATURES ══════════════════════════════════════ -->
+<section class="features section-sm" aria-labelledby="features-heading">
+  <div class="container">
+    <div class="features-grid">
+      {% set featureServices = contentful.services | batch(3) | first %}
+      {% for service in featureServices %}
+      <div class="card feature-card fade-in {% if loop.index > 1 %}fade-in-delay-{{ loop.index - 1 }}{% endif %}">
+        <span class="feature-icon" aria-hidden="true">{{ service.icon }}</span>
+        <h3>{{ service.name }}</h3>
+        <p>{{ service.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT STRIP ══════════════════════════════════════════ -->
+<section class="section" aria-labelledby="about-heading">
+  <div class="container">
+    <div class="about-strip">
+      <div class="about-image-wrap fade-in">
+        <div class="about-placeholder" aria-label="Photo of Sangeeta, spiritual counsellor">
+          🌙
+        </div>
+        <div class="about-tag">{{ contentful.settings.aboutTagText | default("20+ Years<br>Experience") | safe }}</div>
+      </div>
+      <div class="about-text fade-in fade-in-delay-1">
+        <p class="label">About Sangeeta</p>
+        <div class="divider divider-left"></div>
+        <h2 id="about-heading">{{ contentful.settings.aboutHeading | default("Real Guidance.<br>Real Transformation.") | safe }}</h2>
+        {% if contentful.settings.aboutParagraphs %}
+          {{ contentful.settings.aboutParagraphs | safe }}
+        {% else %}
+          <p>I am a spiritual counsellor, tarot reader, Reiki master and transformation coach with over 20 years of experience working with clients across the UK, USA, Singapore, India and beyond.</p>
+          <p>My work goes far beyond fortune-telling. I help you understand your inner landscape — your mindscape, your emotionscape — and find clarity in even the most complex situations.</p>
+          <p>I work with a strict code of ethics and genuine care for every person I guide. Whether you're navigating a career crossroads, a relationship challenge, a health journey, or simply seeking deeper spiritual connection — I'm here to help.</p>
+        {% endif %}
+        <div class="about-stats">
+          <div class="stat-box">
+            <span class="stat-num">20+</span>
+            <span class="stat-lbl">Years Experience</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-num">500+</span>
+            <span class="stat-lbl">Clients Worldwide</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-num">4</span>
+            <span class="stat-lbl">Healing Modalities</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-num">🌍</span>
+            <span class="stat-lbl">Global Practice</span>
+          </div>
+        </div>
+        <a href="/contact/" class="btn btn-gold">Begin Your Journey</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ═════════════════════════════════════════ -->
+<section class="section testimonials" aria-labelledby="testi-heading">
+  <div class="container">
+    <div class="section-header fade-in">
+      <p class="label">✦ Client Stories ✦</p>
+      <div class="divider"></div>
+      <h2 id="testi-heading">What People Are Saying</h2>
+      <p>Real words from real clients across the world</p>
+    </div>
+    <div class="slider-track">
+      {% set homepageTestimonials = [] %}
+      {% for t in contentful.testimonials %}
+        {% if t.showOnHomepage %}
+          {% set homepageTestimonials = (homepageTestimonials.push(t), homepageTestimonials) %}
+        {% endif %}
+      {% endfor %}
+      {% for testimonial in homepageTestimonials | batch(3) | first %}
+      <div class="card testi-card fade-in {% if loop.index > 1 %}fade-in-delay-{{ loop.index - 1 }}{% endif %}">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">
+          "{{ testimonial.review }}"
+        </p>
+        <div class="testi-author">
+          <div class="testi-avatar">{{ testimonial.initials }}</div>
+          <div class="testi-meta">
+            <strong>{{ testimonial.initials }}</strong>
+            <span>{{ testimonial.location }}</span>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div style="text-align:center; margin-top:48px;">
+      <a href="/gallery/" class="btn btn-outline">See More Testimonials</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA BANNER ════════════════════════════════════════════ -->
+<section class="section-sm fade-in" style="background: linear-gradient(135deg, rgba(91,45,142,.18), rgba(9,4,26,0)); border-top: 1px solid rgba(201,168,76,.1); border-bottom: 1px solid rgba(201,168,76,.1);">
+  <div class="container" style="text-align:center;">
+    <p class="label" style="margin-bottom:12px;">✦ Begin Today ✦</p>
+    <h2 style="margin-bottom:16px;">Your first free reading is waiting</h2>
+    <p style="color:var(--muted); max-width:480px; margin:0 auto 32px;">
+      Start with a complimentary 20-minute clarity reading. No obligation. Just honest, intuitive guidance.
+    </p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a href="/contact/" class="btn btn-gold">Claim Your Free Reading</a>
+      <a href="{{ contentful.settings.whatsappUrl | default('https://chat.whatsapp.com/HvLWpj6GPvn0JijaKI2Xic') }}" target="_blank" rel="noopener" class="btn btn-ghost">Join Our Community 💬</a>
+    </div>
+  </div>
+</section>

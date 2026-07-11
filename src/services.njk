@@ -1,0 +1,79 @@
+---
+layout: base.njk
+title: "Services & Pricing | Goddess Alchemy"
+description: "Tarot readings from £30, Reiki healing from £60, chakra balancing, spiritual coaching and our signature 8-week transformation programme. View full pricing."
+permalink: /services/
+---
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="hero-orb hero-orb-1" style="opacity:.15;"></div>
+  <div class="container">
+    <p class="label">✦ What I Offer ✦</p>
+    <div class="divider"></div>
+    <h1>Services & Pricing</h1>
+    <p>Every session is tailored to you. Every reading is honest, grounded and delivered with genuine care.</p>
+  </div>
+</div>
+
+<!-- CORE SERVICES -->
+<section class="section" style="padding-top:20px;">
+  <div class="container">
+
+    <div class="section-header fade-in">
+      <p class="label">Individual Sessions</p>
+      <div class="divider"></div>
+      <h2>Choose Your Path</h2>
+      <p>One-to-one sessions delivered via Zoom or in person. All levels welcome.</p>
+    </div>
+
+    <div class="services-grid">
+      {% for service in contentful.services %}
+      <div class="card service-card {{ 'featured' if service.isFeatured }} fade-in {% if loop.index0 % 3 == 1 %}fade-in-delay-1{% elif loop.index0 % 3 == 2 %}fade-in-delay-2{% endif %}" {% if service.name == "Free Clarity Reading" %}style="border-color:rgba(201,168,76,.35);"{% endif %}>
+        {% if service.isFeatured %}<div class="featured-badge">Most Popular</div>{% endif %}
+        <span class="service-icon">{{ service.icon }}</span>
+        <h3>{{ service.name }}</h3>
+        <p>{{ service.description }}</p>
+        <div class="price-tag" {% if service.priceLabel == "Free" %}style="background:linear-gradient(135deg,#2a7a3a,#3aaa4a);"{% endif %}>{{ service.priceLabel }}</div>
+        <ul class="service-features">
+          {% for feature in service.features %}
+          <li>{{ feature }}</li>
+          {% endfor %}
+        </ul>
+        <a href="/contact/" class="btn {{ 'btn-gold' if service.isFeatured else 'btn-outline' }}" style="width:100%;justify-content:center;">{{ service.ctaText | default("Book Session") }}</a>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- PACKAGES -->
+    <div class="packages fade-in">
+      <p class="label" style="text-align:center;">✦ Best Value ✦</p>
+      <div class="divider"></div>
+      <h2 style="text-align:center;">Packages & Bundles</h2>
+      <div class="packages-grid">
+        {% for package in contentful.packages %}
+        <div class="card package-card">
+          <span class="package-icon">{{ package.icon }}</span>
+          <div>
+            <h4>{{ package.name }}</h4>
+            <p>{{ package.description }}</p>
+            <span class="price-tag">{{ package.priceLabel }}{% if package.savingsNote %} <span style="font-size:.85rem;color:var(--muted);">{{ package.savingsNote }}</span>{% endif %}</span>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- RETREAT TEASER -->
+<section class="section-sm fade-in" style="background:var(--bg2); border-top:1px solid rgba(201,168,76,.08);">
+  <div class="container" style="text-align:center; max-width:680px;">
+    <p class="label">✦ Coming Soon ✦</p>
+    <div class="divider"></div>
+    <h2>Spiritual Retreats</h2>
+    <p style="color:var(--muted); margin:16px 0 28px;">3-day immersive retreat experiences combining tarot, group healing, guided meditation, chakra work and transformation coaching. Small groups, intimate setting, extraordinary results.</p>
+    <a href="/contact/" class="btn btn-outline">Register Your Interest</a>
+  </div>
+</section>

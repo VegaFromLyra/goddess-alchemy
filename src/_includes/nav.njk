@@ -1,0 +1,23 @@
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Goddess <span>Alchemy</span></a>
+    <ul class="nav-links" role="list">
+      <li><a href="/" {% if page.url == "/" %}class="active"{% endif %}>Home</a></li>
+      <li><a href="/services/" {% if page.url == "/services/" %}class="active"{% endif %}>Services</a></li>
+      <li><a href="/gallery/" {% if page.url == "/gallery/" %}class="active"{% endif %}>Gallery</a></li>
+      <li><a href="/contact/" {% if page.url == "/contact/" %}class="active"{% endif %}>Contact</a></li>
+    </ul>
+    <a href="/contact/" class="btn btn-gold nav-cta" {% if page.url == "/" %}style="display:none;" id="navCta"{% endif %}>Book a Session</a>
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" role="dialog" aria-label="Mobile navigation">
+  <a href="/">Home</a>
+  <a href="/services/">Services</a>
+  <a href="/gallery/">Gallery</a>
+  <a href="/contact/">Contact</a>
+  <a href="/contact/" class="btn btn-gold" style="margin-top:16px;">Book a Session</a>
+</div>

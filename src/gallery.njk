@@ -1,0 +1,88 @@
+---
+layout: base.njk
+title: "Gallery & Testimonials | Goddess Alchemy"
+description: "Client testimonials and social proof from Goddess Alchemy. Real transformations from real clients across the UK, USA, Singapore and India."
+permalink: /gallery/
+extraHead: "<style>.testimonials-full-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:80px}.testi-featured{grid-column:span 3;padding:48px;text-align:center}.testi-featured .testi-text{font-size:1.25rem;max-width:760px;margin:0 auto 24px;line-height:1.9}.testi-featured .testi-author{justify-content:center}@media(max-width:900px){.testimonials-full-grid{grid-template-columns:1fr 1fr}.testi-featured{grid-column:span 2}}@media(max-width:600px){.testimonials-full-grid{grid-template-columns:1fr}.testi-featured{grid-column:span 1;padding:28px}}</style>"
+---
+
+<div class="page-hero">
+  <div class="hero-orb hero-orb-1" style="opacity:.15;"></div>
+  <div class="container">
+    <p class="label">✦ Proof in the Words ✦</p>
+    <div class="divider"></div>
+    <h1>Gallery & Testimonials</h1>
+    <p>Real words from real people whose lives have shifted through this work.</p>
+  </div>
+</div>
+
+<!-- FEATURED TESTIMONIALS -->
+<section class="section" style="padding-top:20px;">
+  <div class="container">
+
+    <div class="section-header fade-in">
+      <p class="label">✦ Client Stories ✦</p>
+      <div class="divider"></div>
+      <h2>What People Are Saying</h2>
+      <p>Clients from the UK, USA, Singapore, India and beyond</p>
+    </div>
+
+    <div class="testimonials-full-grid">
+      {% for testimonial in contentful.testimonials %}
+      {% if testimonial.isFeatured %}
+      <!-- Featured wide testimonial -->
+      <div class="card testi-card testi-featured fade-in">
+        <div class="testi-stars" style="font-size:1.1rem;margin-bottom:16px;">★★★★★</div>
+        <p class="testi-text">
+          "{{ testimonial.review }}"
+        </p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="width:48px;height:48px;font-size:1.2rem;">{{ testimonial.initials }}</div>
+          <div class="testi-meta">
+            <strong>{{ testimonial.initials }}</strong>
+            <span>{{ testimonial.location }}</span>
+          </div>
+        </div>
+      </div>
+      {% else %}
+      <!-- Regular testimonial -->
+      <div class="card testi-card fade-in {% if loop.index0 % 3 == 1 %}fade-in-delay-1{% elif loop.index0 % 3 == 2 %}fade-in-delay-2{% endif %}">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"{{ testimonial.review }}"</p>
+        <div class="testi-author">
+          <div class="testi-avatar">{{ testimonial.initials }}</div>
+          <div class="testi-meta"><strong>{{ testimonial.initials }}</strong><span>{{ testimonial.location }}</span></div>
+        </div>
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+
+    <!-- VISUAL GALLERY -->
+    <div class="section-header fade-in">
+      <p class="label">✦ The Practice ✦</p>
+      <div class="divider"></div>
+      <h2>From the Sessions</h2>
+      <p>A glimpse into the world of Goddess Alchemy</p>
+    </div>
+
+    <div class="gallery-grid">
+      {% for item in contentful.galleryItems %}
+      <div class="gallery-item g{{ loop.index }} fade-in {% if loop.index0 % 3 == 1 %}fade-in-delay-1{% elif loop.index0 % 3 == 2 %}fade-in-delay-2{% endif %}">
+        <div class="gallery-thumb">{{ item.icon }}</div>
+        <div class="gallery-overlay"><h4>{{ item.title }}</h4><span>{{ item.subtitle }}</span></div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-sm fade-in" style="background:var(--bg2);border-top:1px solid rgba(201,168,76,.08);">
+  <div class="container" style="text-align:center;">
+    <h2 style="margin-bottom:16px;">Ready to begin your story?</h2>
+    <p style="color:var(--muted);max-width:480px;margin:0 auto 32px;">Start with a free 20-minute clarity reading. No obligation, just honest guidance.</p>
+    <a href="/contact/" class="btn btn-gold">Book Your Free Reading</a>
+  </div>
+</section>

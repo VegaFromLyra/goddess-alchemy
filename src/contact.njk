@@ -1,36 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Book a Session | Goddess Alchemy</title>
-  <meta name="description" content="Book your tarot reading, Reiki healing or spiritual coaching session with Goddess Alchemy. Free 20-minute clarity reading available to new clients." />
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-
-<nav class="nav">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">Goddess <span>Alchemy</span></a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html" class="active">Contact</a></li>
-    </ul>
-    <a href="contact.html" class="btn btn-gold nav-cta">Book a Session</a>
-    <button class="hamburger" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-<div class="mobile-menu">
-  <a href="index.html">Home</a>
-  <a href="services.html">Services</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="contact.html">Contact</a>
-  <a href="contact.html" class="btn btn-gold" style="margin-top:16px;">Book a Session</a>
-</div>
+---
+layout: base.njk
+title: "Book a Session | Goddess Alchemy"
+description: "Book your tarot reading, Reiki healing or spiritual coaching session with Goddess Alchemy. Free 20-minute clarity reading available to new clients."
+permalink: /contact/
+---
 
 <div class="page-hero">
   <div class="hero-orb hero-orb-1" style="opacity:.15;"></div>
@@ -55,7 +28,7 @@
           <div class="contact-item-icon">📸</div>
           <div class="contact-item-text">
             <strong>Instagram</strong>
-            <a href="https://instagram.com/starbirth" target="_blank" rel="noopener">@Starbirth</a>
+            <a href="{{ contentful.settings.instagramUrl | default('https://instagram.com/starbirth') }}" target="_blank" rel="noopener">{{ contentful.settings.instagramHandle | default("@Starbirth") }}</a>
           </div>
         </div>
 
@@ -63,7 +36,7 @@
           <div class="contact-item-icon">💬</div>
           <div class="contact-item-text">
             <strong>WhatsApp Community</strong>
-            <a href="https://chat.whatsapp.com/HvLWpj6GPvn0JijaKI2Xic" target="_blank" rel="noopener">Join Inspired Life Collective</a>
+            <a href="{{ contentful.settings.whatsappUrl | default('https://chat.whatsapp.com/HvLWpj6GPvn0JijaKI2Xic') }}" target="_blank" rel="noopener">Join Inspired Life Collective</a>
           </div>
         </div>
 
@@ -84,7 +57,7 @@
         </div>
 
         <!-- WhatsApp CTA button -->
-        <a href="https://chat.whatsapp.com/HvLWpj6GPvn0JijaKI2Xic" target="_blank" rel="noopener" class="wa-button">
+        <a href="{{ contentful.settings.whatsappUrl | default('https://chat.whatsapp.com/HvLWpj6GPvn0JijaKI2Xic') }}" target="_blank" rel="noopener" class="wa-button">
           💬 Join Our WhatsApp Community
         </a>
 
@@ -132,15 +105,12 @@
               <select id="service" name="service" required>
                 <option value="" disabled selected>Select a service…</option>
                 <option value="free">Free 20-Min Clarity Reading (New Clients)</option>
-                <option value="tarot-quick">Quick Tarot Reading — £30</option>
-                <option value="tarot-standard">Standard Tarot Reading — £65</option>
-                <option value="tarot-deep">Deep Insight Reading — £95</option>
-                <option value="reiki">Reiki Healing Session — £60</option>
-                <option value="chakra">Chakra Balancing — £60</option>
-                <option value="combo">Tarot + Chakra Combo — £110</option>
-                <option value="coaching">Spiritual Life Coaching — £75</option>
-                <option value="programme">8-Week Transformation Programme — £485</option>
-                <option value="group">Monthly Group Meditation — £15</option>
+                {% for service in contentful.services %}
+                <option value="{{ service.name | lower | replace(' ', '-') }}">{{ service.name }} — {{ service.priceLabel }}</option>
+                {% endfor %}
+                {% for package in contentful.packages %}
+                <option value="{{ package.name | lower | replace(' ', '-') }}">{{ package.name }} — {{ package.priceLabel }}</option>
+                {% endfor %}
                 <option value="retreat">Retreat (Register Interest)</option>
                 <option value="other">Other / Not Sure Yet</option>
               </select>
@@ -188,64 +158,12 @@
       <h2>Frequently Asked</h2>
     </div>
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; max-width:900px; margin:0 auto;">
-      <div class="card fade-in" style="padding:28px;">
-        <h4 style="color:var(--gold-lt);font-family:var(--font-head);font-size:1.2rem;margin-bottom:10px;">How are sessions delivered?</h4>
-        <p style="color:var(--muted);font-size:.9rem;">All sessions are delivered via Zoom. I work with clients globally — USA, UK, India, Singapore, Canada and beyond.</p>
+      {% for faq in contentful.faqs %}
+      <div class="card fade-in {% if loop.index0 % 2 == 1 %}fade-in-delay-1{% endif %}" style="padding:28px;">
+        <h4 style="color:var(--gold-lt);font-family:var(--font-head);font-size:1.2rem;margin-bottom:10px;">{{ faq.question }}</h4>
+        <p style="color:var(--muted);font-size:.9rem;">{{ faq.answer }}</p>
       </div>
-      <div class="card fade-in fade-in-delay-1" style="padding:28px;">
-        <h4 style="color:var(--gold-lt);font-family:var(--font-head);font-size:1.2rem;margin-bottom:10px;">How do I pay?</h4>
-        <p style="color:var(--muted);font-size:.9rem;">Payment details are sent once your session is confirmed. I accept bank transfer, PayPal and major cards. Payment plans available for packages.</p>
-      </div>
-      <div class="card fade-in" style="padding:28px;">
-        <h4 style="color:var(--gold-lt);font-family:var(--font-head);font-size:1.2rem;margin-bottom:10px;">Is it confidential?</h4>
-        <p style="color:var(--muted);font-size:.9rem;">Completely. Everything you share is held in total confidence. I work with a strict code of ethics and professional integrity at all times.</p>
-      </div>
-      <div class="card fade-in fade-in-delay-1" style="padding:28px;">
-        <h4 style="color:var(--gold-lt);font-family:var(--font-head);font-size:1.2rem;margin-bottom:10px;">Can I get a reading as a gift?</h4>
-        <p style="color:var(--muted);font-size:.9rem;">Yes. Gift readings are available for any service. Get in touch and I'll arrange a personalised gift message and booking process for the recipient.</p>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </section>
-
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <h3>Goddess <span>Alchemy</span></h3>
-        <p>Spiritual counselling, tarot readings, Reiki healing and transformation coaching. Serving clients globally with integrity, authenticity and care.</p>
-        <div class="footer-social">
-          <a href="https://instagram.com/starbirth" target="_blank" rel="noopener" class="social-btn">📸</a>
-          <a href="https://chat.whatsapp.com/HvLWpj6GPvn0JijaKI2Xic" target="_blank" rel="noopener" class="social-btn">💬</a>
-          <a href="https://facebook.com" target="_blank" rel="noopener" class="social-btn">📘</a>
-        </div>
-      </div>
-      <div class="footer-col"><h4>Services</h4><ul>
-        <li><a href="services.html">Tarot Readings</a></li>
-        <li><a href="services.html">Reiki Healing</a></li>
-        <li><a href="services.html">Chakra Balancing</a></li>
-        <li><a href="services.html">Spiritual Coaching</a></li>
-        <li><a href="services.html">8-Week Programme</a></li>
-      </ul></div>
-      <div class="footer-col"><h4>Navigate</h4><ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services & Pricing</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="contact.html">Book a Session</a></li>
-      </ul></div>
-      <div class="footer-col"><h4>Connect</h4><ul>
-        <li><a href="https://instagram.com/starbirth" target="_blank" rel="noopener">@Starbirth</a></li>
-        <li><a href="contact.html">Book via Website</a></li>
-        <li><a href="https://chat.whatsapp.com/HvLWpj6GPvn0JijaKI2Xic" target="_blank" rel="noopener">WhatsApp Community</a></li>
-      </ul></div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2026 Goddess Alchemy. All rights reserved.</p>
-      <span>goddessalchemy.co.uk | @Starbirth</span>
-    </div>
-  </div>
-</footer>
-
-<script src="script.js"></script>
-</body>
-</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}" />
+  {% if keywords %}<meta name="keywords" content="{{ keywords }}" />{% endif %}
+  <link rel="stylesheet" href="/styles.css" />
+  {% if extraHead %}{{ extraHead | safe }}{% endif %}
+</head>
+<body>
+
+{% include "nav.njk" %}
+
+{{ content | safe }}
+
+{% include "footer.njk" %}
+
+{% if showModal and contentful.settings.modalEnabled != false %}
+<!-- ═══ DISCOVERY CALL MODAL ════════════════════════════════ -->
+<div class="discovery-modal" id="discoveryModal">
+  <div class="modal-content">
+    <button class="modal-close" aria-label="Close">&times;</button>
+    <p class="label">✦ Limited Availability ✦</p>
+    <div class="modal-divider"></div>
+    <h2>{{ contentful.settings.modalHeading | default("Ready to Transform?") }}</h2>
+    {% if contentful.settings.modalBody %}
+      {{ contentful.settings.modalBody | safe }}
+    {% else %}
+      <p>Our <span class="highlight">8-Week Spiritual Transformation Programme</span> is now open for enrolment. Combining tarot, Reiki, chakra healing and coaching into one life-changing journey.</p>
+      <p>Book a <span class="highlight">FREE 30-minute discovery call</span> to see if this programme is right for you.</p>
+    {% endif %}
+    <a href="/contact/" class="modal-cta-btn">{{ contentful.settings.modalCtaText | default("Book Your Free Call ✦") }}</a>
+    <p class="modal-footer">No obligation. Just an honest conversation.</p>
+  </div>
+</div>
+{% endif %}
+
+<script src="/script.js"></script>
+{% if extraScripts %}{{ extraScripts | safe }}{% endif %}
+</body>
+</html>
