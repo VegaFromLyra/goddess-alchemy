@@ -243,14 +243,13 @@ module.exports = async function () {
       accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
     });
 
-    const [services, packages, testimonials, faqs, galleryItems, settingsRes] =
+    const [services, packages, testimonials, faqs, galleryItems] =
       await Promise.all([
         client.getEntries({ content_type: 'service', order: 'fields.sortOrder' }),
         client.getEntries({ content_type: 'package', order: 'fields.sortOrder' }),
         client.getEntries({ content_type: 'testimonial', order: 'fields.sortOrder' }),
         client.getEntries({ content_type: 'faq', order: 'fields.sortOrder' }),
         client.getEntries({ content_type: 'galleryItem', order: 'fields.sortOrder' }),
-        client.getEntries({ content_type: 'siteSettings', limit: 1 }),
       ]);
 
     return {
@@ -259,7 +258,7 @@ module.exports = async function () {
       testimonials: testimonials.items.map(i => i.fields),
       faqs: faqs.items.map(i => i.fields),
       galleryItems: galleryItems.items.map(i => i.fields),
-      settings: settingsRes.items[0]?.fields || {},
+      settings: {},
     };
   } catch (err) {
     console.error('[contentful] Error fetching data, using fallback:', err.message);
