@@ -45,13 +45,34 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', e => {
       e.preventDefault();
       const btn = form.querySelector('[type="submit"]');
-      btn.textContent = '✦ Message Sent!';
-      btn.style.background = 'linear-gradient(135deg, #2a7a3a, #3aaa4a)';
-      setTimeout(() => {
-        btn.textContent = 'Send Message';
-        btn.style.background = '';
-        form.reset();
-      }, 3000);
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString()
+      })
+        .then(res => {
+          if (!res.ok) throw new Error('Network response was not ok');
+          btn.textContent = '✦ Message Sent!';
+          btn.style.background = 'linear-gradient(135deg, #2a7a3a, #3aaa4a)';
+          form.reset();
+          setTimeout(() => {
+            btn.textContent = 'Send Message ✦';
+            btn.style.background = '';
+            btn.disabled = false;
+          }, 3000);
+        })
+        .catch(() => {
+          btn.textContent = 'Something went wrong — please try again';
+          btn.style.background = 'linear-gradient(135deg, #7a2a2a, #aa3a3a)';
+          setTimeout(() => {
+            btn.textContent = 'Send Message ✦';
+            btn.style.background = '';
+            btn.disabled = false;
+          }, 3000);
+        });
     });
   }
 
